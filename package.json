@@ -1,0 +1,16 @@
+{
+  "name": "vercel-backend-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/get_user.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.14.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
