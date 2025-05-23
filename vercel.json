@@ -1,13 +1,12 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "api/*.js",
-      "use": "@vercel/node"
-    }
+    { "src": "api/*.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/get_user", "dest": "api/get_user.js" },
-    { "src": "/create_user", "dest": "api/create_user.js" }
+    { "src": "/create_user", "dest": "api/create_user.js" },
+    { "src": "/get_category", "dest": "api/get_category.js" },
+    { "src": "/create_category", "dest": "api/create_category.js" }
   ]
 }
