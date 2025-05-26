@@ -8,12 +8,14 @@ export default async function handler(req, res) {
     if (req.method === "OPTIONS") return res.status(204).end();
     if (req.method !== "GET") return res.status(405).json({ error: "Method not allowed."});
 
+    const chunks = [];
+    for await (const chunk of req) {
+        chunks.push(chunk);
+    }
+    const body = JSON.parse(Buffer.concat(chunks).toString());
+    console.log("body req:", body);
+
     try {
-        const chunks = [];
-        for await (const chunk of req) {
-            chunks.push(chunk);
-        }
-        const body = JSON.parse(Buffer.concat(chunks).toString());
 
         const user_id = body?.user_id;
 
